@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import CardItem from './CardItem';
 
 const BankGrid = ({ items, isLoading }) => {
     return isLoading ? (<h1>Loading...</h1>) : (<section className="cards">
         {items.map((item) => (
             <>
             {/* <h1 key={item.name}>{item.name}</h1> */}
-            <h2 key={item.id}>{item.creditCards.map((card) => card.cardName)}</h2>
+            <CardItem key={item.id} item={item.map}></CardItem>
             </>
         ))}
     </section>)
