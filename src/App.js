@@ -1,23 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/ui/Header'
+import BankGrid from './components/banks/BankGrid'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 
-function App() {
+const App = () => {
+  
+  const[items, setItems] = useState([]);
+  const[isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchItems = async () => {
+      setIsLoading(true)
+      const result = await axios(`http://creditcardscanada-api.herokuapp.com/banks`)
+      
+      setItems(result.data)
+      setIsLoading(false)
+    }
+
+    fetchItems()
+
+  }, [])
+
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Header />
+      <BankGrid isLoading={isLoading} items={items} />
     </div>
   );
 }
