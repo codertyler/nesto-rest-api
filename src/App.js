@@ -1,9 +1,10 @@
 import './App.css';
-import Header from './components/ui/Header';
-import BankGrid from './components/banks/BankGrid';
-import CardItem from './components/banks/CardItem';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import Header from './components/ui/Header';
+import BankGrid from './components/banks/BankGrid';
+import Prefences from './components/ui/Preferences';
+
 
 const App = () => {
   
@@ -13,8 +14,7 @@ const App = () => {
   useEffect(() => {
     const fetchItems = async () => {
       setIsLoading(true)
-      const result = await axios(`http://creditcardscanada-api.herokuapp.com/banks`)
-      console.log(result.data.map((bank) => bank.creditCards))
+      const result = await axios(`http://creditcardscanada-api.herokuapp.com/banks`);
       setItems(result.data)
       setIsLoading(false)
     }
@@ -27,6 +27,7 @@ const App = () => {
   return (
     <div className="container">
       <Header />
+      <Prefences />
       <BankGrid isLoading={isLoading} items={items} />
     </div>
   );
