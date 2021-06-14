@@ -45,7 +45,7 @@ const App = () => {
   useEffect(() => {
     const fetchItems = async () => {
       setIsLoading(true)
-      const result = await axios(`http://creditcardscanada-api.herokuapp.com/banks`);
+      const result = await axios(`https://creditcardscanada-api.herokuapp.com/banks`);
       setItems(result.data)
       setIsLoading(false)
     }
