@@ -9,8 +9,7 @@ import {
 
 const RankedCards = ({ RESPData, selection }) => {
  
-    console.log(selection)
-        
+       
     const data = selection === 'showByAnnualFee' ? rankByAnnualFee(RESPData) : rankByInterestRate(RESPData);  
     
     const rankedCards = data.map((card) => (
