@@ -14,6 +14,10 @@ The app can be used to select credit cards of your preference on a single platfo
 
 # Documentation
 
+## User login
+
+It's a fake user login and as long as the fields are filled, it will login to the main page.
+
 ## REST API
 
 The app calls data using Axios. Axios was selected due to its browser compatibality that runs beyond the fetch method. 
@@ -40,9 +44,9 @@ When you click on the navbar on the top you can rank the card by annual fee and 
 - **LoginForm** component is responsible takes the login and passes to App component where the login and logout is handled.
 - **Preferences** component passes the radio button state to the BankItem component.
 
-## User login
+## Unit Test
 
-It's a fake user login and as long as the fields are filled, it will login to the main page.
+It contains one unit test on App.test.js
 
 ## GIF
 
