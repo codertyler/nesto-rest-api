@@ -4,10 +4,34 @@ import axios from 'axios';
 import Header from './components/ui/Header';
 import BankGrid from './components/banks/BankGrid';
 import Prefences from './components/ui/Preferences';
+import LoginForm from './components/ui/LoginForm';
 
 
 const App = () => {
   
+  const adminUser = {
+    email: "test@test.com",
+    password: "password"
+  }
+
+  const Login = details => {
+    if (details.email !== "" && details.password !== "") {
+      setUser({
+        email: details.email,
+      })
+    } else {
+      alert('All fields must be filled!')
+    }
+  }
+
+  const Logout = () => {
+    setUser({
+      email: "", 
+      password: ""
+    });
+  }
+
+  const [user, setUser] = useState({email: "", password: ""})
   const[items, setItems] = useState([]);
   const[isLoading, setIsLoading] = useState(true);
   const [selection, setSelection] = useState("showAll");
@@ -33,9 +57,9 @@ const App = () => {
  
   return (
     <div className="container">
-      <Header />
+      {(user.email !== "") ? (<><Header Logout={Logout} user={user} />
       <Prefences handleOnChange={(e) => handleOnChange(e)}/>
-      <BankGrid isLoading={isLoading} items={items} selection={selection}/>
+      <BankGrid isLoading={isLoading} items={items} selection={selection}/></>) : <LoginForm Login={Login} />}
     </div>
   );
 }
