@@ -1,27 +1,33 @@
-import React, { useState } from 'react';
-import './Preferences.css';
+import React from "react";
+import "./Preferences.css";
 
-const Preferences = () => {
-    
-    const[selection, setSelection] = useState('');
+//The selected preference is passed to the parent down to other components.
 
-    const handleOnChange = (e) => {
-        return e.target.value;
-    }
-    
-    return (
-        <div className='preferences-container'>
-            <h3>User Prefences</h3>
-            <div className='prefences-radio-container' onChange={(e) => handleOnChange(e)}>
-                <input type="radio" value="showAll" id="radioShowAll" name="cards" />
-                <label for="radioShowAll">Show All</label>
-                <input type="radio" value="showByAnnualFee" id="radioShowByAnnualFee" name="cards" />
-                <label for="radioShowByAnnualFee">Show by Annual Fee</label>
-                <input type="radio" value="showByInterestRate" id="radioShowByInterestRate" name="cards" />
-                <label for="radioShowByInterestRate">Show by Purchase Interest Rate</label>
-            </div>
-        </div>
-    )
-}
+const Preferences = ({ handleOnChange }) => {
+  return (
+    <div className="preferences-container">
+      <div className="prefences-radio-container" onChange={handleOnChange}>
+        <input type="radio" value="showAll" id="radioShowAll" name="cards" />
+        <label htmlFor="radioShowAll">Show All</label>
+        <input
+          type="radio"
+          value="showByAnnualFee"
+          id="radioShowByAnnualFee"
+          name="cards"
+        />
+        <label htmlFor="radioShowByAnnualFee">Rank by Annual Fee</label>
+        <input
+          type="radio"
+          value="showByInterestRate"
+          id="radioShowByInterestRate"
+          name="cards"
+        />
+        <label htmlFor="radioShowByInterestRate">
+          Rank by Purchase Interest Rate
+        </label>
+      </div>
+    </div>
+  );
+};
 
-export default Preferences
+export default Preferences;

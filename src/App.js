@@ -10,6 +10,13 @@ const App = () => {
   
   const[items, setItems] = useState([]);
   const[isLoading, setIsLoading] = useState(true);
+  const [selection, setSelection] = useState("showAll");
+
+  const handleOnChange = (e) => {
+    const currentSelection = e.target.value;
+    setSelection(currentSelection);
+    return currentSelection;
+}
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -27,8 +34,8 @@ const App = () => {
   return (
     <div className="container">
       <Header />
-      <Prefences />
-      <BankGrid isLoading={isLoading} items={items} />
+      <Prefences handleOnChange={(e) => handleOnChange(e)}/>
+      <BankGrid isLoading={isLoading} items={items} selection={selection}/>
     </div>
   );
 }

@@ -2,14 +2,16 @@ import React from "react";
 import CardItem from "./CardItem";
 import "./BankItem.css";
 
-const BankItem = ({ item }) => {
+//This component will show all the available bank cards with bank name on top.
+
+const BankItem = ({ item, items, selection }) => {
   return (
     <div className="bank-item-container">
       <div className="bank-item-title">
         <h2>{item.name}</h2>
-        <img src={item.bankLogo}></img>
+        <img src={item.bankLogo} alt={item.name}></img>
       </div>
-      <CardItem item={item}></CardItem>
+      {selection === 'showAll' ? <CardItem item={item} /> : null}    
     </div>
   );
 };

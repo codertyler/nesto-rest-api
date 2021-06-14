@@ -22,17 +22,6 @@ a {
   padding: 0 20px;
 }
 
-.btn {
-  display: inline-block;
-  color: #fff;
-  background-color: #3fb573;
-  font-size: 1em;
-  text-align: center;
-  padding: 10px 15px;
-  border: 0;
-  margin: 10px 0;
-}
-
 header {
   height: 200px;
 }
@@ -44,25 +33,15 @@ header img {
 .center {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start;
   text-align: center;
-  max-width: 40em;
-  border: 1px solid #fff;
+  width: 100%;
+  max-height: 10em;
 }
 
-.search {
-  height: 100px;
-}
-
-input[type='text'] {
-  display: block;
-  padding: 10px;
-  font-size: 20px;
-  border: 0;
-  border-radius: 5px;
-  width: 60%;
-  margin: auto;
-  outline: none;
+.center img {
+  width: 5em;
+  margin-right: 10em;
 }
 
 .cards {
@@ -77,13 +56,6 @@ input[type='text'] {
   height: 200px;
   perspective: 1000px;
   margin: 10px 10px 10px 10px;
-}
-
-.card h1 {
-  font-size: 25px;
-  border-bottom: 1px #fff solid;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
 }
 
 .card img {
@@ -118,11 +90,6 @@ input[type='text'] {
   color: white;
   padding: 20px;
   transform: rotateY(180deg);
-}
-
-.card li {
-  list-style: none;
-  padding-bottom: 10px;
 }
 
 @media (max-width: 800px) {

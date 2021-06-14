@@ -1,5 +1,11 @@
 .prefences-radio-container {
     margin: 10px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2em;
+    border: 2px solid #fff;
+    padding: 2em;
+    border-radius: 15px;
   }
   
   .prefences-radio-container input[type="radio"] {

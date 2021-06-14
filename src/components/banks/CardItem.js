@@ -1,12 +1,14 @@
 import React from "react";
 import "./CreditItem.css";
 
+//When all the cards are shown, each card item is dictated by this component.
+
 const CardItem = ({ item }) => {
   const creditCard = item.creditCards.map((card) => (
     <div className="card" key={card.id}>
       <div className="card-inner">
         <div className="card-front">
-          <img src={card.thumbnailURL}></img>
+          <img src={card.thumbnailURL} alt={card.cardName}></img>
         </div>
         <div className="card-back">
           <h4>{card.cardName}</h4><br/>
