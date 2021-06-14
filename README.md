@@ -37,4 +37,14 @@ When you click on the navbar on the top you can rank the card by annual fee and 
 - **CardItem** component sits inside **BankItem** and displays all the available cards.
 - **RankedCards** component renders whenever there is a selection.
 - **Header** component contains the logo and the title of the app.
-- 
+- **LoginForm** component is responsible takes the login and passes to App component where the login and logout is handled.
+- **Preferences** component passes the radio button state to the BankItem component.
+
+## User login
+
+It's a fake user login and as long as the fields are filled, it will login to the main page.
+
+## GIF
+
+![](https://github.com/codertyler/nesto-rest-api/blob/master/public/screenrecording.gif)
+
