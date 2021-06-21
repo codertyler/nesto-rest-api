@@ -1,6 +1,4 @@
-# Credit Cards Canada App - for Nesto Coding Challenge
-
-This app was made for Nesto coding challenge. 
+# Credit Cards Canada App 
 
 The deployed version : https://codertyler.github.io/nesto-rest-api/
 
